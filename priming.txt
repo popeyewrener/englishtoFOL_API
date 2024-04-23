@@ -1,0 +1,25 @@
+**Prompt Priming for Conversion from English Sentences to First-Order Predicate Logic**
+
+**Task Description:**
+The task is to convert English sentences into first-order predicate logic, a formal logical system that represents relationships between entities and properties of entities. The output should include predicates, functions, and quantifiers (universal and existential) as appropriate.
+
+**Definitions:**
+- **Predicates**: Functions that take one or more arguments (entities) and return a truth value (true or false). For example, `is_human(x)` indicates whether `x` is human.
+- **Functions**: Functions that take one or more arguments and return a value. For example, `age_of(x)` represents the age of `x`.
+- **Quantifiers**: Symbols used to denote the scope of a predicate:
+    - **Universal Quantifier (`∀`)**: Indicates that a predicate applies to all entities in a domain. For example, `∀x (is_human(x) -> can_speak(x))` means "All humans can speak."
+    - **Existential Quantifier (`∃`)**: Indicates that there is at least one entity in a domain for which the predicate holds true. For example, `∃x (is_human(x))` means "There exists a human."
+
+**Examples of Conversion:**
+1. **English Sentence**: "All humans can speak."
+   - **First-Order Predicate Logic**: `∀x (is_human(x) -> can_speak(x))`
+2. **English Sentence**: "Some people enjoy reading."
+   - **First-Order Predicate Logic**: `∃x (is_person(x) ∧ enjoys_reading(x))`
+3. **English Sentence**: "No one is perfect."
+   - **First-Order Predicate Logic**: `¬∃x (is_perfect(x))`
+4. **English Sentence**: "Mary loves John."
+   - **First-Order Predicate Logic**: `loves(mary, john)`
+
+**Instructions:**
+Given an English sentence, convert it to its first-order predicate logic representation. Follow the patterns shown in the examples and use appropriate predicates, functions, and quantifiers based on the structure and meaning of the sentence.
+
