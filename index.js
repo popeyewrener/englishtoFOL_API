@@ -104,7 +104,22 @@ const apicall = async (data) => {
     };
 
     const safetySettings = [
-       
+        {
+            category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+            threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+            threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+            threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
+        {
+            category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+            threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+        },
     ];
      p = "First-Order Predicate Logic: "+p.toString();
      p2 = p.toString();
@@ -124,7 +139,6 @@ const apicall = async (data) => {
         generationConfig,
         safetySettings,
     });
-    console.log(result.response); 
     if (result.response.candidates[0].finishReason === "HARM_BLOCKED" || result.response.candidates[0].finishReason === "SAFETY"|| result.response.candidates[0].finishReason === "STOPPING_CRITERIA") {
         return "Sorry, I can't generate content based on the prompt. Please try another prompt."
     }
