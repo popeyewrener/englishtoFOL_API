@@ -31,4 +31,30 @@ The task involves converting English sentences into first-order predicate logic.
    - **Predicate Logic**: `loves(mary, john)`
    - **Explanation**: This sentence is represented as a predicate `loves(mary, john)` denoting that `Mary` (`mary`) loves `John` (`john`).
 
+#### Complex Examples:
+
+1. **English Sentence**: "If it is raining and there is lightning, then people should stay indoors."
+   - **Predicate Logic**: `(raining() ∧ lightning()) -> should_stay_indoors()`
+   - **Explanation**: This sentence is a conditional statement represented as `(raining() ∧ lightning()) -> should_stay_indoors()`. It expresses that if it is raining (`raining()`) and there is lightning (`lightning()`), then people should stay indoors (`should_stay_indoors()`).
+
+2. **English Sentence**: "Either John is playing tennis, or he is watching a movie."
+   - **Predicate Logic**: `playing_tennis(john) ∨ watching_movie(john)`
+   - **Explanation**: This sentence expresses a disjunction, represented as `playing_tennis(john) ∨ watching_movie(john)`. It denotes that either John is playing tennis (`playing_tennis(john)`) or he is watching a movie (`watching_movie(john)`).
+
+3. **English Sentence**: "Every student who studies hard will pass the exam, but not everyone who passes the exam studied hard."
+   - **Predicate Logic**: `(∀x (is_student(x) ∧ studies_hard(x)) -> passes_exam(x)) ∧ ¬(∀x (passes_exam(x) -> studies_hard(x)))`
+   - **Explanation**: This sentence includes a conditional statement and a negation. The first part, `(∀x (is_student(x) ∧ studies_hard(x)) -> passes_exam(x))`, denotes that every student who studies hard (`studies_hard(x)`) will pass the exam (`passes_exam(x)`). The second part, `¬(∀x (passes_exam(x) -> studies_hard(x)))`, indicates that not everyone who passes the exam (`passes_exam(x)`) studied hard (`studies_hard(x)`).
+
+4. **English Sentence**: "If an employee works more than 40 hours a week, they are eligible for overtime pay, unless they are a manager."
+   - **Predicate Logic**: `(works_more_than_40_hours_per_week(x) ∧ ¬is_manager(x)) -> eligible_for_overtime_pay(x)`
+   - **Explanation**: This conditional sentence with an exception is represented as `(works_more_than_40_hours_per_week(x) ∧ ¬is_manager(x)) -> eligible_for_overtime_pay(x)`. It expresses that if an employee works more than 40 hours a week (`works_more_than_40_hours_per_week(x)`) and is not a manager (`¬is_manager(x)`), they are eligible for overtime pay (`eligible_for_overtime_pay(x)`).
+
+
+   Things to Avoid:
+   is_something
+
+**English Examples**
+   1. **English Sentence**: "All the flowers that are red are also fragrant, but some flowers are fragrant but not red."
+   - **Predicate Logic**: `(∀x (is_flower(x) ∧ is_red(x)) -> is_fragrant(x)) ∧ ∃x (is_flower(x) ∧ is_fragrant(x) ∧ ¬is_red(x))`
+   - **Explanation**: The first part of this sentence, `(∀x (is_flower(x) ∧ is_red(x)) -> is_fragrant(x))`, denotes that all flowers that are red (`is_red(x)`) are also fragrant (`is_fragrant(x)`). The second part, `∃x (is_flower(x) ∧ is_fragrant(x) ∧ ¬is_red(x))`, indicates that there exists some flower (`is_flower(x)`) that is fragrant (`is_fragrant(x)`) but not red (`¬is_red(x)`).
 
