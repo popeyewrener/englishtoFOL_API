@@ -3,6 +3,7 @@ const fs = require('fs');
 const env = require('dotenv').config();  
 const express = require('express');
 const http = require('http');
+const cors = require('cors');
 
 // Define the path to the .txt file
 const contextPath = './context.txt';
@@ -15,6 +16,7 @@ const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.GOOGLE_API_KEY;
   
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const httpServer = http.createServer(app);
